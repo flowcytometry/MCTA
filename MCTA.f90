@@ -1,5 +1,5 @@
 ! 
-!   multiparametric flow cytometry v1.1
+!   MCTA v1.1
 !   Copyright Carine Beatrici, Fabrício A. B. Silva
 !
 !
@@ -481,7 +481,6 @@ do j=1,fluorescent_channels
               if (values(i,j+color_begin)/=0.0) then 
                  somatorio = somatorio + LOG10(values(i,j+color_begin))
                  sumsqr = sumsqr + values(i,j+color_begin)*values(i,j+color_begin)
-              !if (values(i,j+color_begin).NE.0) then 
                  number_values_median = number_values_median + 1
                  median_values(number_values_median) = values(i,j+color_begin)
               end if
@@ -539,24 +538,10 @@ real function  Median(X, N)
       INTEGER                            :: i,j
       REAL                               :: xi
 
-      !write(*,*)"Number of non-zero values: ",N
-      !write(*,*)"First non-zero value: ",X(1)
-
 
       DO i = 1, N                       ! make a copy
          Temp(i) = X(i)
       END DO
-      ! Sort Temp - Insertion s0rt
-      !DO i = 2, N
-      !  xi = Temp(i)
-      !  j = i - 1
-      !  do while (j >= 1)
-      !      if (Temp(j) <= xi) exit
-      !      Temp(j + 1) = Temp(j)
-      !      j = j - 1
-      !  end do
-      !  Temp(j + 1) = xi
-      !END DO
 
       CALL  Sort(Temp, N)               ! sort the copy
       IF (MOD(N,2) == 0) THEN           ! compute the median
@@ -565,7 +550,6 @@ real function  Median(X, N)
          Median = Temp(N/2+1)
       END IF
 
-      !write(*,*)"MedianXXXX: ",Median
 
    END function  Median
 
