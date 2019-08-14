@@ -1,0 +1,29 @@
+set termoption enhanced
+#set title '{/Symbol g}'
+set title font ", 20"
+#set xlabel 'f'
+set xlabel 'FSC'
+set xlabel font ", 18"
+set xtics font ", 11"
+set ylabel font ", 18"
+set ytics font ", 11"
+#set ylabel '{/Symbol d}' enhanced
+set ylabel 'SSC' enhanced
+set nokey
+set cbrange [0:360]
+set palette defined ( 0 '#ff0000',\
+		      1 '#ff7d00',\
+                      2 '#ffff00',\
+		      3 '#00ff00',\
+		      4 '#00ffff',\
+		      5 '#0000ff',\
+		      6 '#ff00ff',\
+		      7 '#440044')
+
+plot [0:65533][0:65533] "nofl.dat" using 2:4:5 with points pt 7 ps 0.3 lc rgb "black" 
+set term postscript eps enhanced color 
+set output "result_file.eps"
+#pause -1
+replot "fluo.dat" using 2:4:5 with points palette pt 7 ps 0.3
+#pause -1
+
