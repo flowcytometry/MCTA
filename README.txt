@@ -1,4 +1,4 @@
-# multiparametric-flow-cytometry
+# MCTA
 developed by Carine P. Beatrici and Fabricio A. B. Silva
 
 Detailed tutorial is available in the document multiparametric-flow-cytometry.pdf. 
