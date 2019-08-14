@@ -37,7 +37,7 @@ For itens b, c and d, to discover the number of columns of the fcs file, just ex
 in.dat file incomplete and choose from the options displayed by the program output. The counting starts at 1.
 
 3) the wavelength values (item e) can be related or not to real filters values. 
-The multiparametric-flow-cytometry application automatically distributes colors evenly along the hue circle, 
+The MCTA application automatically distributes colors evenly along the hue circle, 
 ordered according to the  wavelength values informed.
 
 4)The background labeling (item f) corresponds to the maximum fluorescence value of negative events. 
