@@ -491,7 +491,7 @@ do j=1,fluorescent_channels
     std(j) = SQRT(variance(j))
     !write(*,*)"XXKKKK: ",median_values(1)
     median_result(j) = Median(median_values,number_values_median)
-    write(*,*)"Channel:",j," Geometric Mean ",mean(j)," Std deviation: ",std(j), "Median: ",median_result(j)
+    write(*,*)"Channel:",j," Geometric Mean: ",mean(j)," Std deviation: ",std(j), "Median: ",median_result(j)
   else
     mean(j) = 0
     variance(j) = 0
