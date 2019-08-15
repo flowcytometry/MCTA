@@ -91,8 +91,8 @@ in.dat ----------------------------- This configuration file uses the Sample_39.
                                      dot-plot according to this configuration file.    
 in_Sample_37.dat ------------------- Another example of configuration file, this time using 
                                      the Sample_37.fcs as input file.
-MCTA.f90 - Fortran program that generates the colored dot-plot.
-MCTA.pdf - Tutorial of the package.
+MCTA.f90 --------------------------- Fortran program that generates the colored dot-plot.
+MCTA.pdf --------------------------- Tutorial of the package.
 script-gnu-color ------------------- Gnuplot script, this script uses the information in the 
                                      temporary files to generate the colored dot-plot.                                   
 script-gnu-bw ---------------------- Gnuplot script, this script generates the trust map 
