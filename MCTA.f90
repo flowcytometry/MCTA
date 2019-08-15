@@ -1,6 +1,6 @@
 ! 
 !   MCTA v1.1
-!   Copyright Carine Beatrici, Fabrício A. B. Silva
+!   Copyright by Carine Beatrici, Fabrício A. B. Silva
 !
 !
 ! analised_colors......the colors that are going to be taken into account in the tendency 
@@ -10,7 +10,7 @@
 !
 !
 !
-program multiparametric_flow_cytometry
+program MCTA
 implicit none
 
 INTERFACE
@@ -521,13 +521,10 @@ write(*,*)"Execution finished successfully!"
 end program
 
 
-
-
 ! --------------------------------------------------------------------
 ! REAL FUNCTION  Median() :
 !    This function receives an array X of N entries, copies its value
-! to a local array Temp(), sorts Temp() and computes the median.
-!    The returned value is of REAL type.
+! to a local array Temp(), sorts Temp() and returns the median.
 ! --------------------------------------------------------------------
 
 real function  Median(X, N)
@@ -552,6 +549,12 @@ real function  Median(X, N)
 
 
    END function  Median
+
+!--------------------------------------------------------------------
+!SUBROUTINE Sort()
+!   A Simple sorting subroutine
+!   Implements the INSERTION SORT algorithm
+!--------------------------------------------------------------------
 
    subroutine Sort(a, n)
     implicit none
