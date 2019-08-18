@@ -480,7 +480,7 @@ do j=1,fluorescent_channels
       if (event_accepted==1) then
               if (values(i,j+color_begin)/=0.0) then 
                  somatorio = somatorio + LOG10(values(i,j+color_begin))
-                 sumsqr = sumsqr + values(i,j+color_begin)*values(i,j+color_begin)
+                 sumsqr = sumsqr + LOG10(values(i,j+color_begin))*LOG10(values(i,j+color_begin))
                  number_values_median = number_values_median + 1
                  median_values(number_values_median) = values(i,j+color_begin)
               end if
@@ -488,10 +488,10 @@ do j=1,fluorescent_channels
     end do
     mean(j) = 10**(somatorio/number_values_median)
     variance(j) = (sumsqr - somatorio*somatorio/number_values_median)/(number_values_median-1)
-    std(j) = SQRT(variance(j))
+    std(j) = 10**SQRT(variance(j))
     !write(*,*)"XXKKKK: ",median_values(1)
     median_result(j) = Median(median_values,number_values_median)
-    write(*,*)"Channel:",j," Geometric Mean: ",mean(j)," Std deviation: ",std(j), "Median: ",median_result(j)
+    write(*,*)"Channel:",j," Geometric Mean: ",mean(j),"Geo Std dev: ",std(j), "Median: ",median_result(j)
   else
     mean(j) = 0
     variance(j) = 0
