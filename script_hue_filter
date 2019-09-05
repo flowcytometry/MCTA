@@ -3,6 +3,26 @@ read -p 'Lower limit (0.0-360.0): ' lowerlim
 read -p 'Upper limit (0.0-360.0): ' upperlim
 
 gawk -v up="$upperlim" -v lo="$lowerlim" '{if (($5>=lo) && ($5<=up)) print $0}' fluo.dat > tmp.dat
+
+NUMEVENTOS=$(< "tmp.dat" wc -l)
+echo 'Number Events: '$NUMEVENTOS
+if (($NUMEVENTOS == 0))
+then
+	echo "There are zero events associated with the defined limits"
+	exit
+fi
+
+NUMWORDS=$(< "tmp.dat" wc -w)
+NUMCOL=$[NUMWORDS/NUMEVENTOS]
+echo 'Number Columns: '$NUMCOL
+let NUMCOL+=1
+COUNTER=10
+while [ $COUNTER -lt $NUMCOL ]; do
+	gawk -v up="$upperlim" -v lo="$lowerlim" '{if (($5>=lo) && ($5<=up)) print $'$COUNTER'}' fluo.dat > testeMM.dat
+	echo 'CHANNEL: '$[COUNTER-9]
+        ./mm.r < testeMM.dat
+        let COUNTER+=1
+done
 gnuplot <<- EOF
 set termoption enhanced
 #set title '{/Symbol g}'
