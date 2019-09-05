@@ -511,7 +511,6 @@ write(*,*)"................................................................."
 write(*,*)"Generating images"
 !write(*,*)" Press any key to continue"
 call system("gnuplot script-gnu-color")
-call system("gnuplot script-gnu-bw")
 deallocate(values)
 write(*,*)"................................................................."
 write(*,*)"Execution finished successfully!"
