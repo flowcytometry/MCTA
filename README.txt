@@ -75,6 +75,7 @@ Dependencies:
 4 - gnuplot;
 5 - R compiler;
 6 - the Bioconductor package flowcore
+7 - The git application
 
 
 Files in this package:
