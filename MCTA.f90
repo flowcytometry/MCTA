@@ -1,5 +1,5 @@
 ! 
-!   MCTA v1.1
+!   MCTA v1.2
 !   Copyright by Carine Beatrici, Fabrício A. B. Silva
 !
 !
