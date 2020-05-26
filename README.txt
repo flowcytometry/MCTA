@@ -1,4 +1,4 @@
-# MCTA v1.1
+# MCTA v1.2
 developed by Carine P. Beatrici and Fabricio A. B. Silva
 
 Detailed tutorial is available in the document MCTA.pdf. 
