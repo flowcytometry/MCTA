@@ -1,15 +1,15 @@
 # MCTA v1.2
 developed by Carine P. Beatrici and Fabricio A. B. Silva
 
-Detailed tutorial is available in the document MCTA.pdf. 
+A detailed tutorial is available in the document MCTA.pdf. 
 
 How to run the program:
 
-In a Linux or MacOS terminal:
+In a Linux or macOS terminal:
 
 1) After the download, compile the code using "make"; 
 
-2) To execute the program, it is necessary to provide the configuration file in.dat. See an example below:
+2) It is necessary to provide the configuration file in.dat to execute the program. See an example below:
 
 #file information                                        example
 
@@ -33,12 +33,12 @@ h) Fluorescent channels used in the color resultant calculation       0 0 0 0 0 
 Helpful observations:
 The in.dat file must have the above information, in order;
 
-For items b, c and d, to discover the number of columns of the fcs file, just execute the program with the 
+For items b, c, and d, to discover the number of columns of the fcs file, just execute the program with the 
 in.dat file incomplete and choose from the options displayed by the program output. The counting starts at 1.
 
 3) the wavelength values (item e) can be related or not to real filters values. 
 The MCTA application automatically distributes colors evenly along the hue circle, 
-ordered according to the  wavelength values informed.
+ordered according to the wavelength values informed.
 
 4)The background labeling (item f) corresponds to the maximum fluorescence value of negative events. 
 Any positive event for a given channel must have superior fluorescence intensity, ]
@@ -56,7 +56,7 @@ By doing this, all the channels are taken into account to define the resultant c
 To calculate the resultant value only for positive events on a subset of channels, type the corresponding 
 channel numbers followed by zeros, e.g. 2 4 0 0 0 0. 
 In this case, only positive events for both the second and fourth channels will be considered 
-and will receive a color, all others are going to stay black.
+and will receive a color, all others will remain black.
 
 To calculate the resultant value for negative events in a set of channels, just put the number of channels
 as negative numbers, e.g. 2 -4 0 0 0 0. 
@@ -65,7 +65,7 @@ for the second channel and negative for the fourth channel (single positive even
 
 The cytometry files must be present in the same folder as the executable file.
 
-This software was developed to run on Linux and MacOS based systems.
+This software was developed to run on Linux and macOS based systems.
 
 Dependencies:
 
@@ -86,12 +86,12 @@ Makefile --------------------------- Compiles the code into an executable file.
 Sample_37.fcs ---------------------- Flow cytometry experimental data used
                                      as an example (control group of mice).
 Sample_39.fcs ---------------------- Flow cytometry experimental data used
-                                     as an example (infected group of mice).
+                                     as an example (the infected group of mice).
 in.dat ----------------------------- This configuration file uses the Sample_39.fcs file as data source. 
                                      The MCTA application will generate the color 
                                      dot-plot according to this configuration file.    
-in_Sample_37.dat ------------------- Another example of configuration file, this time using 
-                                     the Sample_37.fcs as input file.
+in_Sample_37.dat ------------------- Another example of a configuration file, this time using 
+                                     the Sample_37.fcs as an input file.
 MCTA.f90 --------------------------- Fortran program that generates the colored dot-plot.
 MCTA.pdf --------------------------- Tutorial of the package.
 script-gnu-color ------------------- Gnuplot script, this script uses the information in the 
